@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/AndroidPagingWithCoroutines" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Kotlin-Coroutines-Android-Examples" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/MVVMNewsApp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/MVVMNewsApp1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/MVVMShoppingList" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/android-mvvm-architecture" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/flutter_notification_demo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pixabayapp" vcs="Git" />
+  </component>
+</project>

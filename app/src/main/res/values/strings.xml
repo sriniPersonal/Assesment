@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EnbdAssessment</string>
+    <string name="no_results">No results</string>
+    <string name="PIX_BAY_API_KEY">18069779-859ee62e1c9ab5d300e865cab</string>
+    <string name="search">search</string>
+    <string name="no_content_found">No Content Found</string>
+</resources>
