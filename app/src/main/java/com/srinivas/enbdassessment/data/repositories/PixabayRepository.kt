@@ -13,19 +13,27 @@ class PixabayRepository(
 ) : SafeApiRequest() {
 
     suspend fun getImages(query: String, pageNumber: Int) =
-          apiRequest {
-        api.getImageResults(
-            Constants.PIX_BAY_API_KEY,
-            query,
-            pageNumber,
-            Constants.QUERY_PAGE_SIZE
-        )
-      }
+        apiRequest {
+            api.getImageResults(
+                Constants.PIX_BAY_API_KEY,
+                query,
+                pageNumber,
+                Constants.QUERY_PAGE_SIZE
+            )
+        }
 
-
+    /**
+     * Save Images in image_table
+     */
     suspend fun saveImages(images: List<Hit>) = db.getPixabayImageDao().upsert(images)
 
-    fun getImageData(query:String) = db.getPixabayImageDao().getImages(query)
+    /**
+     * return Saved Images from image_table
+     */
+    fun getImageData(query: String) = db.getPixabayImageDao().getImages(query)
 
-    fun deleteImageData() = db.getPixabayImageDao().deleteAllImages()
+    /**
+     * delete saved images if any exists.
+     */
+    suspend fun deleteImageData() = db.getPixabayImageDao().deleteAllImages()
 }

@@ -18,6 +18,9 @@ import org.kodein.di.generic.singleton
 
 class MyApplication:Application(),KodeinAware {
 
+    /**
+     * used   Kodein for dependency Injection
+     */
     override val kodein: Kodein= Kodein.lazy {
         import(androidXModule(this@MyApplication))
         bind() from singleton { NetworkConnectionInterceptor(instance()) }
@@ -26,7 +29,9 @@ class MyApplication:Application(),KodeinAware {
         bind() from singleton { PixabayRepository(instance(), instance()) }
         bind() from provider { PixabayViewModelFactory(instance()) }
 
-        Constants.initStetho(this@MyApplication)
+        if(BuildConfig.DEBUG) {
+            Constants.initStetho(this@MyApplication)
+        }
     }
 
 }

@@ -12,7 +12,8 @@ import com.srinivas.enbdassessment.data.db.entities.Hit
 import com.srinivas.enbdassessment.databinding.InflateImageItemBinding
 
 
-class ImageAdapter(var imageInterface:ImageInterface) : RecyclerView.Adapter<ImageAdapter.ImageHolder>() {
+class ImageAdapter(var imageInterface: ImageInterface) :
+    RecyclerView.Adapter<ImageAdapter.ImageHolder>() {
 
 
     inner class ImageHolder(val inflateImageItemBinding: InflateImageItemBinding) :
@@ -28,7 +29,7 @@ class ImageAdapter(var imageInterface:ImageInterface) : RecyclerView.Adapter<Ima
         }
     }
 
-     val differ = AsyncListDiffer(this, differCallback)
+    val differ = AsyncListDiffer(this, differCallback)
 
 
     override fun getItemCount(): Int = differ.currentList.size
@@ -46,7 +47,10 @@ class ImageAdapter(var imageInterface:ImageInterface) : RecyclerView.Adapter<Ima
     override fun onBindViewHolder(holder: ImageHolder, position: Int) {
         holder.inflateImageItemBinding.hit = differ.currentList[position]
         holder.inflateImageItemBinding.imgView.setOnClickListener {
-              imageInterface.onItemclick(holder.inflateImageItemBinding.imgView, differ.currentList[position])
+            imageInterface.onItemclick(
+                holder.inflateImageItemBinding.imgView,
+                differ.currentList[position]
+            )
         }
     }
 

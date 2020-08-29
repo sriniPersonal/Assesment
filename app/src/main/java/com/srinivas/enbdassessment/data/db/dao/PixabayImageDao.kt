@@ -7,11 +7,12 @@ import com.srinivas.enbdassessment.data.db.entities.Hit
 interface PixabayImageDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun upsert(images: List<Hit>)
+    suspend fun upsert(images: kotlin.collections.List<com.srinivas.enbdassessment.data.db.entities.Hit>)
 
+    // return result set where query matches with tags column
     @Query("SELECT * FROM images_table WHERE tags LIKE '%' || :query || '%'")
     fun getImages(query:String): List<Hit>
 
     @Query("Delete from images_table")
-    fun deleteAllImages()
+    suspend fun deleteAllImages()
 }

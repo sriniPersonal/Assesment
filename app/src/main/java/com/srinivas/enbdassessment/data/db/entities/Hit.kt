@@ -9,15 +9,10 @@ data class Hit(
     @PrimaryKey(autoGenerate = false)
     val id: Int,
     val comments: Int,
-    val downloads: Int,
     val favorites: Int,
     val largeImageURL: String,
     val likes: Int,
     val previewURL: String,
     val tags: String,
-    val type: String,
-    val user: String,
-    val userImageURL: String,
-    val user_id: Int,
-    val views: Int
+    val user: String
 ):Serializable

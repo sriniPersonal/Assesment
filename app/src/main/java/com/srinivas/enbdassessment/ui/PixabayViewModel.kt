@@ -51,7 +51,7 @@ class PixabayViewModel(
         }
     }
 
-    private fun handleSearchNewsResponse(
+    public suspend fun handleSearchNewsResponse(
         response: PixabayResponse,
         query: String
     ): Resource<PixabayResponse> {
@@ -86,7 +86,7 @@ class PixabayViewModel(
 
     fun getSavedImages(query: String) = repository.getImageData(query)
 
-    private fun deleteSavedImages() = repository.deleteImageData()
+    private suspend fun deleteSavedImages() = repository.deleteImageData()
 
     override fun onCleared() {
         super.onCleared()
